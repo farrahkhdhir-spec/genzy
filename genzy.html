@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="GENZY — a small business bringing clothing, accessories and stickers soon."
+    />
+    <title>GENZY — Coming Soon</title>
+
+    <style>
+      :root {
+        --burg: #711936;
+        --burg-dark: #4a1025;
+        --burg-soft: #9d3155;
+        --cream: #fbf5f1;
+        --paper: #fffdfb;
+        --ink: #24161b;
+        --muted: #816c73;
+        --line: #eadcdf;
+        --white: #fff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system,
+          BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: var(--cream);
+        color: var(--ink);
+        overflow-x: hidden;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      /* ================= HEADER ================= */
+
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 20;
+        padding: 18px 7%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #fff;
+        background: rgba(74, 16, 37, 0.72);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .logo {
+        font-size: 25px;
+        font-weight: 950;
+        letter-spacing: 7px;
+      }
+
+      .nav {
+        display: flex;
+        gap: 30px;
+      }
+
+      .nav a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 1.8px;
+        position: relative;
+      }
+
+      .nav a:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -7px;
+        width: 0;
+        height: 1px;
+        background: #fff;
+        transition: 0.3s;
+      }
+
+      .nav a:hover:after {
+        width: 100%;
+      }
+
+      /* ================= HERO ================= */
+
+      .hero {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        padding: 120px 20px 70px;
+        color: #fff;
+        position: relative;
+        overflow: hidden;
+        background: radial-gradient(
+          circle at 50% 15%,
+          #ad3b60 0,
+          #711936 38%,
+          #4a1025 100%
+        );
+      }
+
+      .orb {
+        position: absolute;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 50%;
+        animation: float 8s ease-in-out infinite;
+      }
+
+      .orb.one {
+        width: 540px;
+        height: 540px;
+        left: -250px;
+        bottom: -300px;
+      }
+
+      .orb.two {
+        width: 460px;
+        height: 460px;
+        right: -230px;
+        top: -230px;
+        animation-delay: -3s;
+      }
+
+      .orb.three {
+        width: 180px;
+        height: 180px;
+        right: 18%;
+        bottom: 8%;
+        opacity: 0.55;
+        animation-delay: -5s;
+      }
+
+      .hero-inner {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+      }
+
+      .eyebrow {
+        font-size: 11px;
+        letter-spacing: 5px;
+        font-weight: 800;
+        opacity: 0.75;
+        animation: fadeUp 0.8s both;
+      }
+
+      .hero h1 {
+        font-size: clamp(60px, 13vw, 132px);
+        line-height: 0.95;
+        margin: 18px 0 18px;
+        letter-spacing: 14px;
+        font-weight: 950;
+        animation: fadeUp 0.9s 0.1s both;
+      }
+
+      .hero p {
+        font-size: 17px;
+        line-height: 1.7;
+        letter-spacing: 0.4px;
+        opacity: 0.9;
+        max-width: 570px;
+        margin: 0 auto 30px;
+        animation: fadeUp 0.9s 0.2s both;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.45);
+        padding: 12px 19px;
+        border-radius: 999px;
+        font-size: 10px;
+        letter-spacing: 2px;
+        font-weight: 900;
+        animation: fadeUp 0.9s 0.3s both;
+      }
+
+      .dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #fff;
+        animation: pulse 1.6s infinite;
+      }
+
+      .scroll {
+        position: absolute;
+        bottom: 25px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 9px;
+        letter-spacing: 3px;
+        opacity: 0.55;
+        animation: bob 2s infinite;
+      }
+
+      /* ================= SECTIONS ================= */
+
+      section {
+        padding: 90px 7%;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 45px;
+      }
+
+      .section-title span {
+        font-size: 10px;
+        color: var(--burg-soft);
+        font-weight: 900;
+        letter-spacing: 4px;
+      }
+
+      .section-title h2 {
+        font-size: clamp(30px, 5vw, 44px);
+        margin: 9px 0 0;
+        letter-spacing: -1px;
+      }
+
+      /* ================= CARDS ================= */
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        max-width: 1120px;
+        margin: auto;
+      }
+
+      .card {
+        position: relative;
+        overflow: hidden;
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        padding: 32px 28px;
+        min-height: 290px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+        transition: transform 0.35s, box-shadow 0.35s, border-color 0.35s;
+      }
+
+      .card:before {
+        content: "";
+        position: absolute;
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        background: rgba(113, 25, 54, 0.06);
+        right: -70px;
+        top: -70px;
+        transition: 0.4s;
+      }
+
+      .card:hover {
+        transform: translateY(-9px);
+        box-shadow: 0 22px 55px rgba(74, 16, 37, 0.13);
+        border-color: #dcbec8;
+      }
+
+      .card:hover:before {
+        transform: scale(1.35);
+      }
+
+      .card > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .icon {
+        font-size: 29px;
+        color: var(--burg);
+        width: 52px;
+        height: 52px;
+        display: grid;
+        place-items: center;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+      }
+
+      .card h3 {
+        font-size: 23px;
+        margin: 18px 0 8px;
+      }
+
+      .card p {
+        color: var(--muted);
+        line-height: 1.7;
+        margin: 0;
+        font-size: 14px;
+      }
+
+      .soon {
+        align-self: flex-start;
+        margin-top: 24px;
+        background: #f2e1e7;
+        color: var(--burg);
+        border-radius: 999px;
+        padding: 9px 13px;
+        font-size: 9px;
+        letter-spacing: 1.2px;
+        font-weight: 950;
+      }
+
+      /* ================= ABOUT ================= */
+
+      .about {
+        background: var(--paper);
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        text-align: center;
+      }
+
+      .about-inner {
+        max-width: 760px;
+        margin: auto;
+      }
+
+      .about h2 {
+        font-size: clamp(30px, 5vw, 50px);
+        margin: 0 0 15px;
+        color: var(--burg);
+      }
+
+      .about p {
+        color: var(--muted);
+        line-height: 1.8;
+        margin: 0;
+      }
+
+      .mini-line {
+        width: 55px;
+        height: 2px;
+        background: var(--burg);
+        margin: 25px auto;
+      }
+
+      /* ================= CONTACT ================= */
+
+      .contact {
+        background: var(--burg);
+        color: #fff;
+      }
+
+      .contact-wrap {
+        max-width: 1000px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 55px;
+        align-items: center;
+      }
+
+      .contact h2 {
+        font-size: clamp(38px, 6vw, 58px);
+        margin: 0 0 12px;
+        letter-spacing: -1px;
+      }
+
+      .contact-copy p {
+        opacity: 0.72;
+        line-height: 1.7;
+      }
+
+      .email-chip {
+        display: inline-block;
+        margin-top: 12px;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 13px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+        padding-bottom: 4px;
+      }
+
+      .form {
+        background: #fff;
+        color: var(--ink);
+        padding: 28px;
+        border-radius: 25px;
+        box-shadow: 0 25px 60px rgba(32, 4, 16, 0.2);
+      }
+
+      .form label {
+        display: block;
+        font-size: 10px;
+        letter-spacing: 1.5px;
+        font-weight: 900;
+        margin: 0 0 7px;
+      }
+
+      .field {
+        margin-bottom: 15px;
+      }
+
+      .form input,
+      .form textarea {
+        width: 100%;
+        border: 1px solid var(--line);
+        background: #fffaf8;
+        border-radius: 13px;
+        padding: 13px 14px;
+        font: inherit;
+        outline: none;
+        transition: 0.2s;
+      }
+
+      .form input:focus,
+      .form textarea:focus {
+        border-color: var(--burg-soft);
+        box-shadow: 0 0 0 3px rgba(157, 49, 85, 0.1);
+      }
+
+      .form textarea {
+        min-height: 115px;
+        resize: vertical;
+      }
+
+      .send {
+        width: 100%;
+        border: 0;
+        border-radius: 13px;
+        padding: 14px;
+        background: var(--burg);
+        color: #fff;
+        font-weight: 900;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: 0.25s;
+      }
+
+      .send:hover {
+        background: var(--burg-dark);
+        transform: translateY(-2px);
+      }
+
+      .form-note {
+        font-size: 9px;
+        color: var(--muted);
+        text-align: center;
+        margin: 11px 0 0;
+      }
+
+      /* ================= FOOTER ================= */
+
+      footer {
+        background: var(--burg-dark);
+        color: #fff;
+        padding: 24px 7%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 10px;
+        letter-spacing: 1.4px;
+        opacity: 0.97;
+      }
+
+      .creator {
+        color: #fff;
+        font-weight: 800;
+        letter-spacing: 1.5px;
+      }
+
+      /* ================= POPUP ================= */
+
+      .popup {
+        position: fixed;
+        inset: 0;
+        z-index: 100;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 25px;
+        background: rgba(35, 7, 18, 0.72);
+        backdrop-filter: blur(9px);
+      }
+
+      .popup.active {
+        display: flex;
+        animation: popupFade 0.3s ease both;
+      }
+
+      .popup-box {
+        width: min(430px, 100%);
+        background: var(--paper);
+        color: var(--ink);
+        border-radius: 30px;
+        padding: 40px 30px;
+        text-align: center;
+        box-shadow: 0 30px 90px rgba(0, 0, 0, 0.35);
+        animation: popupUp 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+      }
+
+      .popup-icon {
+        font-size: 48px;
+        margin-bottom: 12px;
+        animation: popupBounce 1.2s ease-in-out infinite;
+      }
+
+      .popup-box h2 {
+        color: var(--burg);
+        font-size: 28px;
+        margin: 0 0 10px;
+      }
+
+      .popup-box p {
+        color: var(--muted);
+        font-size: 18px;
+        margin: 0;
+        line-height: 1.6;
+      }
+
+      .popup-close {
+        margin-top: 25px;
+        border: 0;
+        background: var(--burg);
+        color: #fff;
+        padding: 13px 27px;
+        border-radius: 999px;
+        font-weight: 900;
+        cursor: pointer;
+        transition: 0.25s;
+      }
+
+      .popup-close:hover {
+        background: var(--burg-dark);
+        transform: translateY(-2px);
+      }
+
+      /* ================= REVEAL ================= */
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(25px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+      }
+
+      .reveal.show {
+        opacity: 1;
+        transform: none;
+      }
+
+      /* ================= ANIMATIONS ================= */
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(22px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0) rotate(0);
+        }
+        50% {
+          transform: translateY(-18px) rotate(4deg);
+        }
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 0.35;
+          transform: scale(0.8);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      @keyframes bob {
+        0%,
+        100% {
+          transform: translate(-50%, 0);
+        }
+        50% {
+          transform: translate(-50%, 6px);
+        }
+      }
+
+      @keyframes popupFade {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes popupUp {
+        from {
+          opacity: 0;
+          transform: translateY(35px) scale(0.92);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      @keyframes popupBounce {
+        0%,
+        100% {
+          transform: rotate(-4deg) scale(1);
+        }
+        50% {
+          transform: rotate(4deg) scale(1.08);
+        }
+      }
+
+      /* ================= MOBILE ================= */
+
+      @media (max-width: 800px) {
+        header {
+          padding: 15px 5%;
+        }
+
+        .nav {
+          gap: 14px;
+        }
+
+        .nav a {
+          font-size: 9px;
+        }
+
+        .logo {
+          font-size: 20px;
+          letter-spacing: 5px;
+        }
+
+        .grid {
+          grid-template-columns: 1fr;
+          max-width: 520px;
+        }
+
+        .contact-wrap {
+          grid-template-columns: 1fr;
+          gap: 35px;
+        }
+
+        .contact {
+          padding: 70px 5%;
+        }
+
+        section {
+          padding: 70px 5%;
+        }
+
+        .hero h1 {
+          letter-spacing: 8px;
+        }
+
+        .orb.three {
+          display: none;
+        }
+
+        footer {
+          flex-direction: column;
+          gap: 13px;
+          text-align: center;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *:before,
+        *:after {
+          animation: none !important;
+          transition: none !important;
+          scroll-behavior: auto !important;
+        }
+
+        .reveal {
+          opacity: 1;
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ================= HEADER ================= -->
+
+    <header>
+      <a class="logo" href="#top" aria-label="Genzy home"> GENZY </a>
+
+      <nav class="nav">
+        <a href="#shop">SHOP</a>
+        <a href="#about">ABOUT</a>
+        <a href="#contact">CONTACT</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <!-- ================= HERO ================= -->
+
+      <section class="hero">
+        <span class="orb one"></span>
+        <span class="orb two"></span>
+        <span class="orb three"></span>
+
+        <div class="hero-inner">
+          <div class="eyebrow">A NEW SMALL BUSINESS IS COMING</div>
+
+          <h1>GENZY</h1>
+
+          <p>
+            Little things. Big personality. A new collection is being made with
+            love — and it's almost ready.
+          </p>
+
+          <div class="pill">
+            <span class="dot"></span>
+            COMING SOON · STAY TUNED
+          </div>
+        </div>
+
+        <div class="scroll">SCROLL TO EXPLORE ↓</div>
+      </section>
+
+      <!-- ================= SHOP ================= -->
+
+      <section id="shop">
+        <div class="section-title reveal">
+          <span>THE FIRST GENZY DROP</span>
+
+          <h2>Pick your thing.</h2>
+        </div>
+
+        <div class="grid">
+          <!-- CLOTHING -->
+
+          <article class="card reveal" onclick="openPopup()">
+            <div>
+              <div class="icon">✦</div>
+
+              <h3>Clothing</h3>
+
+              <p>
+                Oversized pieces, everyday essentials and Genzy details made for
+                your style.
+              </p>
+            </div>
+
+            <div class="soon">COMING SOON 🙈</div>
+          </article>
+
+          <!-- ACCESSORIES -->
+
+          <article class="card reveal" onclick="openPopup()">
+            <div>
+              <div class="icon">♡</div>
+
+              <h3>Accessories</h3>
+
+              <p>
+                Small extras designed to complete your look and add a little
+                Genzy energy.
+              </p>
+            </div>
+
+            <div class="soon">COMING SOON 🙈</div>
+          </article>
+
+          <!-- STICKERS -->
+
+          <article class="card reveal" onclick="openPopup()">
+            <div>
+              <div class="icon">✦</div>
+
+              <h3>Stickers</h3>
+
+              <p>
+                Fun little designs for your laptop, phone, notebooks and
+                anything that needs personality.
+              </p>
+            </div>
+
+            <div class="soon">COMING SOON 🙈</div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ================= ABOUT ================= -->
+
+      <section id="about" class="about">
+        <div class="about-inner reveal">
+          <div class="mini-line"></div>
+
+          <h2>Not ready yet… but almost.</h2>
+
+          <p>
+            GENZY is a small brand currently building its first collection.
+            Follow the journey and stay close — the first drop is coming soon.
+          </p>
+        </div>
+      </section>
+
+      <!-- ================= CONTACT ================= -->
+
+      <section id="contact" class="contact">
+        <div class="contact-wrap">
+          <div class="contact-copy reveal">
+            <div class="eyebrow">LET'S TALK</div>
+
+            <h2>
+              CONTACT<br />
+              GENZY.
+            </h2>
+
+            <p>
+              Questions, ideas, collaborations, or just want to say hi? Send a
+              message directly to the Genzy business inbox.
+            </p>
+
+            <a class="email-chip" href="mailto:genzyyyy0@gmail.com">
+              genzyyyy0@gmail.com
+            </a>
+          </div>
+
+          <form class="form reveal" id="contactForm">
+            <div class="field">
+              <label for="name"> YOUR NAME </label>
+
+              <input
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Your name"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="email"> YOUR EMAIL </label>
+
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="you@example.com"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="message"> MESSAGE </label>
+
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Write your message here..."
+                required
+              ></textarea>
+            </div>
+
+            <button class="send" type="submit">SEND MESSAGE →</button>
+
+            <p class="form-note">
+              Your email app will open with the message addressed to Genzy.
+            </p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+      <span> © 2026 GENZY </span>
+
+      <span class="creator"> Created by Farah &amp; Lina ♡ </span>
+    </footer>
+
+    <!-- ================= POPUP ================= -->
+
+    <div class="popup" id="comingSoonPopup" onclick="closePopup(event)">
+      <div class="popup-box" onclick="event.stopPropagation()">
+        <div class="popup-icon">🙈</div>
+
+        <h2>Estana, chbik mazroub?</h2>
+
+        <p>Jaw jey!</p>
+
+        <button class="popup-close" onclick="closePopup()">OKAY ♡</button>
+      </div>
+    </div>
+
+    <script>
+      /* ================= POPUP ================= */
+
+      function openPopup() {
+        const popup = document.getElementById("comingSoonPopup");
+
+        popup.classList.add("active");
+
+        document.body.style.overflow = "hidden";
+      }
+
+      function closePopup(event) {
+        if (event && event.target !== event.currentTarget) {
+          return;
+        }
+
+        const popup = document.getElementById("comingSoonPopup");
+
+        popup.classList.remove("active");
+
+        document.body.style.overflow = "";
+      }
+
+      /* ================= CONTACT ================= */
+
+      const form = document.getElementById("contactForm");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById("name").value.trim();
+
+        const email = document.getElementById("email").value.trim();
+
+        const message = document.getElementById("message").value.trim();
+
+        const subject = encodeURIComponent("GENZY — New Contact Message");
+
+        const body = encodeURIComponent(
+          `Name: ${name}
+Email: ${email}
+
+Message:
+${message}`
+        );
+
+        window.location.href = `mailto:genzyyyy0@gmail.com?subject=${subject}&body=${body}`;
+      });
+
+      /* ================= SCROLL ANIMATION ================= */
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+              entry.target.style.transitionDelay = (index % 3) * 90 + "ms";
+
+              entry.target.classList.add("show");
+
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.12,
+        }
+      );
+
+      document
+        .querySelectorAll(".reveal")
+        .forEach((el) => observer.observe(el));
+
+      /* ================= ESC TO CLOSE POPUP ================= */
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          closePopup();
+        }
+      });
+    </script>
+  </body>
+</html>
